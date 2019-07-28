@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px 0;
+    background: #6589F9;
+}
+
+.grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin: 5px;
+    position: relative;
+    transition: transform .4s linear;
+    transform-style: preserve-3d;
+}
+
+.card,
+.back,
+.front {
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.back,
+.front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    background: url('../img/asset_back.png') no-repeat center center / contain;
+
+
+}
+
+/* .front:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 150px;
+    width: 150px;
+    background: url('../img/explotion.png') top center / 150px auto;
+    animation: explode 600ms steps(24) forwards;
+} */
+
+.back {
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected {
+    transform: rotateY(180deg);
+}
+
+.match {
+    transform: rotateY(0);
+}
+
+.card.match {
+    transform: translateX(20px);
+    transition-delay: 500ms;
+}
+
+
+/* .match .front {
+    transform: scale(0);
+} */
+
+
+@keyframes explode {
+    100% {
+        background-position-y: -3600px;
+        /* transform: translateY(-3600px); //for img translateY for better performance */
+    }
+}

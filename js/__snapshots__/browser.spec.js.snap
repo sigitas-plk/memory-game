@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`browser createCard should create dive nodes with front and back divs 1`] = `
+<div
+  class="card"
+  data-index="0"
+>
+  <div
+    class="front"
+  />
+  <div
+    class="back"
+    style="background-image: url(img/test.png);"
+  />
+</div>
+`;
