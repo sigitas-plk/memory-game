@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>memory-game</title>
+        <link rel="icon" href="favicon.ico" />
+        <style>
+            /* Global focus-visible style for better keyboard navigation accessibility */
+            :focus-visible {
+                outline: 3px solid #3b82f6;
+                outline-offset: 2px;
+            }
+        </style>
+        <link rel="manifest" href="manifest.json" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/icon-apple-touch.png"
+        />
+        <script type="module" src="./src/game-app.ts"></script>
+    </head>
+    <body>
+        <game-app></game-app>
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("sw.js");
+                });
+            }
+        </script>
+    </body>
+</html>
